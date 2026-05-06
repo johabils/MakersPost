@@ -303,6 +303,54 @@
     }
     .mat-card p { margin: 0; color: #333; font-size: 15px; }
 
+    /* ---------- Contact ---------- */
+    .contact-band {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 72px 24px;
+    }
+    .contact-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .contact-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 50px);
+      font-weight: 500; margin: 0 0 10px;
+    }
+    .contact-inner .sub {
+      font-family: 'Caveat', cursive;
+      font-size: 21px; color: rgba(247,241,230,.7);
+      margin: 0 0 28px;
+    }
+    .contact-inner p {
+      color: rgba(247,241,230,.8); font-size: 16px; line-height: 1.7;
+    }
+    .contact-links {
+      display: grid; gap: 16px;
+    }
+    .contact-link {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(247,241,230,.15);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px;
+      color: var(--paper); text-decoration: none;
+      transition: background .2s ease;
+    }
+    .contact-link:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+    .contact-link .lbl {
+      font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+      color: rgba(247,241,230,.5); margin-bottom: 4px;
+    }
+    .contact-link .val { font-size: 15.5px; color: rgba(247,241,230,.92); }
+    .contact-link .ico-ext { margin-left: auto; font-size: 18px; color: rgba(247,241,230,.3); }
+
+    @media (max-width: 900px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     /* ---------- Bezoek ---------- */
     .bezoek-bar {
       background: var(--wine);
@@ -528,7 +576,7 @@
   <div class="quote-strip">
     <blockquote>
       "Een handgemaakte tas is geen product, het is een gezel voor het leven."
-      <span class="by">— Amelia Lederwaren</span>
+      <span class="by">— Karin Vermoesen · Amelia Lederwaren</span>
     </blockquote>
   </div>
 
@@ -546,16 +594,6 @@
         </div>
       </div>
       <div class="mat-grid">
-        <div class="mat-card">
-          <div class="ico">◆</div>
-          <div>
-            <h3>Plantaardig gelooid leder</h3>
-            <p>
-              Traditioneel gelooid met eikenbast — duurzamer dan chroomleder,
-              rijker van karakter en mooier naarmate het ouder wordt.
-            </p>
-          </div>
-        </div>
         <div class="mat-card">
           <div class="ico">◆</div>
           <div>
@@ -590,6 +628,52 @@
       </div>
     </div>
   </section>
+
+  <!-- contact -->
+  <div class="contact-band">
+    <div class="contact-inner">
+      <div>
+        <div style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,241,230,.5);margin-bottom:14px;">Contact</div>
+        <h2>Karin<br/>Vermoesen</h2>
+        <p class="sub">de maker achter Amelia Lederwaren</p>
+        <p>
+          Bezoek Karin tijdens de openingsuren van De MakersPost in Tienen.
+          Of neem online contact op voor vragen over haar werk, een specifiek
+          stuk of een bestelling op maat.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.amelialederwaren.be" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Website</div>
+            <div class="val">amelialederwaren.be</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="mailto:info@amelialederwaren.be">
+          <div>
+            <div class="lbl">E-mail</div>
+            <div class="val">info@amelialederwaren.be</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/amelialederwaren" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Instagram</div>
+            <div class="val">@amelialederwaren</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="https://www.facebook.com/Amelia-Lederwaren-107273734374009" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Facebook</div>
+            <div class="val">Amelia Lederwaren</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- bezoek -->
   <div class="bezoek-bar">
