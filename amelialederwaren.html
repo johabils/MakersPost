@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amelia Lederwaren — De MakersPost · Tienen</title>
+  <meta name="description" content="Amelia Lederwaren maakt tijdloze, met de hand gestikte tassen en kleine lederwaren van zorgvuldig geselecteerde leersoorten. Te bezoeken in De MakersPost, Tienen." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:        #1f2a5c;
+      --ink-soft:   #2c3870;
+      --wine:       #7a1a3a;
+      --wine-soft:  #9a2a4f;
+      --gold:       #b8893a;
+      --paper:      #f7f1e6;
+      --paper-2:    #efe6d2;
+      --line:       #d9cdb4;
+      --muted:      #6c6452;
+      --shadow:     0 18px 50px -22px rgba(31,42,92,.25);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--wine); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .topbar-inner {
+      max-width: 1180px; margin: 0 auto;
+      padding: 8px 24px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+
+    /* ---------- Header ---------- */
+    header.site {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(247,241,230,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1180px; margin: 0 auto;
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 14px; }
+    .nav .brand img { height: 56px; width: auto; }
+    .nav ul {
+      list-style: none; padding: 0; margin: 0 0 0 auto;
+      display: flex; gap: 28px;
+    }
+    .nav a.navlink {
+      color: var(--ink); font-weight: 500; font-size: 15px;
+      letter-spacing: .02em;
+    }
+    .nav a.navlink:hover { color: var(--wine); text-decoration: none; }
+    .nav .cta {
+      background: var(--wine); color: #fff;
+      padding: 10px 18px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+    }
+    .nav .cta:hover { background: var(--wine-soft); text-decoration: none; }
+
+    /* ---------- Breadcrumb ---------- */
+    .breadcrumb {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .breadcrumb-inner { max-width: 1180px; margin: 0 auto; }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--wine); }
+    .breadcrumb .sep { margin: 0 8px; opacity: .5; }
+
+    /* ---------- Maker Hero ---------- */
+    .maker-hero {
+      position: relative;
+      background: linear-gradient(160deg, #4a0f23 0%, #7a1a3a 60%, #9a3050 100%);
+      color: var(--paper);
+      padding: 80px 24px 88px;
+      overflow: hidden;
+    }
+    .maker-hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .maker-hero-inner {
+      position: relative;
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .maker-hero .eyebrow {
+      display: inline-block;
+      letter-spacing: .35em; text-transform: uppercase;
+      font-size: 11px; color: rgba(247,241,230,.65); font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .maker-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 600;
+      line-height: 1;
+      margin: 0 0 14px;
+      letter-spacing: -.01em;
+    }
+    .maker-hero .discipline {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(22px, 2.5vw, 28px);
+      color: rgba(247,241,230,.8);
+      margin: 0 0 28px;
+    }
+    .maker-hero .tags {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .maker-hero .tag {
+      border: 1px solid rgba(247,241,230,.35);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(247,241,230,.85);
+    }
+    .maker-hero .visual {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .maker-hero .icon-wrap {
+      width: 240px; height: 240px;
+      border: 1px solid rgba(247,241,230,.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .maker-hero .icon-wrap::before {
+      content: "";
+      position: absolute; inset: 16px;
+      border: 1px solid rgba(247,241,230,.1);
+      border-radius: 50%;
+    }
+    .maker-hero .icon-wrap svg {
+      width: 120px; height: 120px;
+      opacity: .85;
+    }
+
+    /* ---------- Ornament ---------- */
+    .ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin: 18px 0 0;
+      color: var(--gold);
+    }
+    .ornament .line { width: 60px; height: 1px; background: var(--gold); }
+    .ornament .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 88px 24px; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .section-head { margin-bottom: 52px; }
+    .section-head .kicker {
+      display: inline-block;
+      letter-spacing: .3em; text-transform: uppercase;
+      font-size: 12px; color: var(--wine); font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 4vw, 50px);
+      color: var(--ink);
+      margin: 0 0 14px;
+      line-height: 1.05;
+    }
+    .section-head p {
+      max-width: 640px;
+      color: #3a3a3a; font-size: 17px;
+    }
+
+    /* ---------- Verhaal ---------- */
+    .verhaal { background: var(--paper-2); }
+    .verhaal-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .verhaal-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 500; color: var(--ink);
+      margin: 0 0 6px; line-height: 1.05;
+    }
+    .verhaal-text .sub {
+      font-family: 'Caveat', cursive;
+      font-size: 22px; color: var(--wine);
+      margin: 0 0 28px;
+    }
+    .verhaal-text p {
+      color: #333; font-size: 16.5px; line-height: 1.75;
+      margin: 0 0 18px;
+    }
+    .verhaal-text p:last-child { margin: 0; }
+    .verhaal-visual {
+      background: linear-gradient(160deg, var(--wine) 0%, #4a0f23 100%);
+      border-radius: 16px;
+      aspect-ratio: 3/4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 24px; color: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .verhaal-visual svg { width: 100px; height: 100px; opacity: .75; }
+    .verhaal-visual .quote-small {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 22px;
+      text-align: center; line-height: 1.4;
+      color: rgba(247,241,230,.9);
+    }
+
+    /* ---------- Werkwijze ---------- */
+    .werkwijze-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 28px; margin-top: 0;
+    }
+    .stap {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 32px 28px;
+    }
+    .stap .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; color: var(--gold);
+      font-size: 18px; margin-bottom: 12px;
+    }
+    .stap h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 600; color: var(--wine);
+      margin: 0 0 10px;
+    }
+    .stap p { margin: 0; color: #333; font-size: 15.5px; }
+
+    /* ---------- Quote strip ---------- */
+    .quote-strip {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .quote-strip blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-style: italic;
+      line-height: 1.3;
+      max-width: 780px; margin: 0 auto;
+    }
+    .quote-strip .by {
+      display: block; margin-top: 20px;
+      font-style: normal;
+      font-family: 'Caveat', cursive;
+      color: rgba(247,241,230,.7); font-size: 20px;
+    }
+
+    /* ---------- Materialen ---------- */
+    .materialen { background: var(--paper-2); }
+    .mat-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .mat-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 32px;
+      display: flex; gap: 22px; align-items: flex-start;
+    }
+    .mat-card .ico {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; color: var(--wine);
+      line-height: 1; flex: 0 0 auto;
+    }
+    .mat-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600; color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .mat-card p { margin: 0; color: #333; font-size: 15px; }
+
+    /* ---------- Bezoek ---------- */
+    .bezoek-bar {
+      background: var(--wine);
+      color: var(--paper);
+      padding: 52px 24px;
+      text-align: center;
+    }
+    .bezoek-bar h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 500; margin: 0 0 10px;
+    }
+    .bezoek-bar p { font-size: 17px; color: rgba(247,241,230,.85); margin: 0 0 26px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px; border-radius: 999px;
+      font-weight: 500; font-size: 15px;
+      transition: transform .15s ease, background .2s ease;
+    }
+    .btn-light { background: var(--paper); color: var(--wine); }
+    .btn-light:hover { background: #fff; text-decoration: none; transform: translateY(-1px); }
+    .btn-ghost-light { border: 1px solid rgba(247,241,230,.5); color: var(--paper); }
+    .btn-ghost-light:hover { background: rgba(247,241,230,.15); text-decoration: none; }
+
+    /* ---------- Footer ---------- */
+    footer.site {
+      background: var(--ink); color: var(--paper);
+      padding: 60px 24px 28px;
+    }
+    .foot {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .foot h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(247,241,230,.7); margin: 0 0 14px;
+    }
+    .foot a { color: rgba(247,241,230,.85); }
+    .foot a:hover { color: #fff; }
+    .foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 14.5px; }
+    .foot p.small { color: rgba(247,241,230,.7); font-size: 14px; line-height: 1.6; }
+    .foot .signoff {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(247,241,230,.15);
+      margin-top: 40px; padding-top: 22px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: rgba(247,241,230,.6);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .nav ul { display: none; }
+      .maker-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .maker-hero .visual { display: none; }
+      .verhaal-grid { grid-template-columns: 1fr; gap: 40px; }
+      .verhaal-visual { aspect-ratio: 16/9; }
+      .werkwijze-grid { grid-template-columns: 1fr; }
+      .mat-grid { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 64px 20px; }
+      .foot { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- top info bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Vierde Lansierslaan 82, 3300 Tienen — naast het station</span>
+      <span>Open · do – zo · 10u – 18u</span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="site">
+    <nav class="nav" aria-label="hoofdnavigatie">
+      <a class="brand" href="index.html">
+        <img src="logo-makerspost-def2.png" alt="De MakersPost — handen van hier" />
+      </a>
+      <ul>
+        <li><a class="navlink" href="index.html#concept">Concept</a></li>
+        <li><a class="navlink" href="index.html#ambachten">Ambachten</a></li>
+        <li><a class="navlink" href="index.html#bezoek">Bezoek</a></li>
+        <li><a class="navlink" href="index.html#contact">Contact</a></li>
+      </ul>
+      <a class="cta" href="index.html#bezoek">Plan je bezoek</a>
+    </nav>
+  </header>
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">De MakersPost</a>
+      <span class="sep">›</span>
+      <a href="index.html#ambachten">Ambachten</a>
+      <span class="sep">›</span>
+      <span>Amelia Lederwaren</span>
+    </div>
+  </div>
+
+  <!-- maker hero -->
+  <div class="maker-hero">
+    <div class="maker-hero-inner">
+      <div>
+        <span class="eyebrow">Deelnemend ambacht · De MakersPost</span>
+        <h1>Amelia<br/>Lederwaren</h1>
+        <p class="discipline">handgemaakte tassen &amp; accessoires</p>
+        <div class="tags">
+          <span class="tag">Lederwaren</span>
+          <span class="tag">Handgestikte tassen</span>
+          <span class="tag">Accessoires</span>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#f7f1e6" stroke-width="1.2" aria-hidden="true">
+            <path d="M20 35 H80 V78 a4 4 0 0 1-4 4 H24 a4 4 0 0 1-4-4 Z"/>
+            <path d="M35 35 V28 a15 15 0 0 1 30 0 V35"/>
+            <circle cx="50" cy="58" r="3.5" fill="#f7f1e6" fill-opacity=".6"/>
+            <path d="M38 70 H62" stroke-dasharray="2.5 2.5"/>
+            <path d="M30 52 Q30 44 38 44" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- verhaal -->
+  <section class="verhaal">
+    <div class="container">
+      <div class="verhaal-grid">
+        <div class="verhaal-text">
+          <div class="section-head" style="margin-bottom:0;">
+            <span class="kicker">Het verhaal</span>
+          </div>
+          <h2>Gemaakt om<br/>te dragen</h2>
+          <p class="sub">tijdloosheid in leder</p>
+          <p>
+            Achter Amelia Lederwaren schuilt een passie voor eerlijk vakmanschap en
+            tijdloze vormen. Elke tas wordt ontworpen en met de hand gemaakt —
+            van de eerste snede tot de laatste steek.
+          </p>
+          <p>
+            Het werk vertrekt vanuit een diep respect voor het materiaal.
+            Leder wordt zorgvuldig geselecteerd op kwaliteit, textuur en karakter.
+            Goedkope shortcuts bestaan niet in dit atelier: alleen degelijk werk
+            dat jaren meegaat en met de tijd mooier wordt.
+          </p>
+          <p>
+            Elke tas heeft haar eigen persoonlijkheid. Geen twee exemplaren zijn
+            identiek — kleine variaties in het leder, de afwerking of de kleur
+            maken elk stuk uniek. Dat is de schoonheid van handwerk.
+          </p>
+        </div>
+        <div class="verhaal-visual" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#f7f1e6" stroke-width="1.2">
+            <path d="M20 35 H80 V78 a4 4 0 0 1-4 4 H24 a4 4 0 0 1-4-4 Z"/>
+            <path d="M35 35 V28 a15 15 0 0 1 30 0 V35"/>
+            <circle cx="50" cy="58" r="3.5" fill="#f7f1e6" fill-opacity=".5"/>
+            <path d="M38 70 H62" stroke-dasharray="2.5 2.5"/>
+          </svg>
+          <p class="quote-small">
+            "Elk stuk leder vertelt zijn eigen verhaal — ons werk is het luisteren."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- werkwijze -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Het proces</span>
+        <h2>Van leder tot tas</h2>
+        <p>
+          Een handgemaakte tas doorloopt een zorgvuldig, ambachtelijk proces —
+          geen haast, geen compromissen.
+        </p>
+        <div class="ornament" aria-hidden="true">
+          <span class="line"></span><span class="dot"></span><span class="line"></span>
+        </div>
+      </div>
+      <div class="werkwijze-grid">
+        <div class="stap">
+          <div class="num">— I</div>
+          <h3>Selectie</h3>
+          <p>
+            Elk project begint met het kiezen van het juiste leder —
+            op kleur, structuur, soepelheid en duurzaamheid.
+            Alleen de beste leersoorten halen het atelier binnen.
+          </p>
+        </div>
+        <div class="stap">
+          <div class="num">— II</div>
+          <h3>Snijden &amp; vormen</h3>
+          <p>
+            De patronen worden precies uitgetekend en met de hand
+            gesneden. Elke curve, elke hoek wordt met oog voor detail
+            afgestemd op het eindresultaat.
+          </p>
+        </div>
+        <div class="stap">
+          <div class="num">— III</div>
+          <h3>Stikken &amp; afwerken</h3>
+          <p>
+            Het samenvoegen gebeurt met de hand — strak gestikte naden,
+            afgeronde randen en metaalbeslag dat hoort bij het karakter
+            van het stuk.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- quote -->
+  <div class="quote-strip">
+    <blockquote>
+      "Een handgemaakte tas is geen product, het is een gezel voor het leven."
+      <span class="by">— Amelia Lederwaren</span>
+    </blockquote>
+  </div>
+
+  <!-- materialen -->
+  <section class="materialen">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Materiaal &amp; kwaliteit</span>
+        <h2>Wat maakt het verschil</h2>
+        <p>
+          De keuze van materialen is even belangrijk als het vakmanschap zelf.
+        </p>
+        <div class="ornament" aria-hidden="true">
+          <span class="line"></span><span class="dot"></span><span class="line"></span>
+        </div>
+      </div>
+      <div class="mat-grid">
+        <div class="mat-card">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Plantaardig gelooid leder</h3>
+            <p>
+              Traditioneel gelooid met eikenbast — duurzamer dan chroomleder,
+              rijker van karakter en mooier naarmate het ouder wordt.
+            </p>
+          </div>
+        </div>
+        <div class="mat-card">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Stevige draden &amp; naden</h3>
+            <p>
+              Gewaxte linnen draad of polyesterdraad in passende kleur —
+              de naden zijn het skelet van elke tas en verdienen de beste
+              kwaliteit.
+            </p>
+          </div>
+        </div>
+        <div class="mat-card">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Kwalitatief beslag</h3>
+            <p>
+              Gesp, ring, schuif of slot — het metaalwerk wordt zorgvuldig
+              gekozen op stevigheid en uitstraling, passend bij elk ontwerp.
+            </p>
+          </div>
+        </div>
+        <div class="mat-card">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Afwerking van de randen</h3>
+            <p>
+              Gesloten randen worden geverfde, geboend of gevouwen —
+              een detail dat het verschil maakt tussen goed en uitmuntend.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- bezoek -->
+  <div class="bezoek-bar">
+    <h2>Ontmoet Amelia in De MakersPost</h2>
+    <p>
+      Bezoek het atelier in Tienen — van donderdag tot en met zondag
+      kan je de collectie bekijken en met de maker in gesprek gaan.
+    </p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-light" href="index.html#bezoek">Plan je bezoek</a>
+      <a class="btn btn-ghost-light" href="index.html#ambachten">Andere makers</a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="site" id="contact">
+    <div class="foot">
+      <div>
+        <h4>De MakersPost</h4>
+        <p class="small">
+          Een huis voor makers in Tienen — een plek waar ambachten,
+          materialen en mensen samenkomen.
+        </p>
+        <p class="small" style="font-family:'Caveat',cursive; font-size:22px; color:rgba(247,241,230,.85);">
+          handen van hier
+        </p>
+      </div>
+      <div>
+        <h4>Bezoek</h4>
+        <ul>
+          <li>Vierde Lansierslaan 82</li>
+          <li>3300 Tienen</li>
+          <li>do – zo · 10u – 18u</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ambachten</h4>
+        <ul>
+          <li><a href="amelialederwaren.html">Amelia Lederwaren</a></li>
+          <li><a href="veroniekdutre.html">Veroniek Dutré</a></li>
+          <li><a href="studioa.html">Studio A</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hallo@demakerspost.be">hallo@demakerspost.be</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="signoff">
+        <span>© 2026 De MakersPost · Tienen</span>
+        <span><a href="index.html" style="color:inherit;">← Terug naar de homepage</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

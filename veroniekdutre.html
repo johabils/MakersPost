@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veroniek Dutré — Juwelen &amp; grafiek · De MakersPost · Tienen</title>
+  <meta name="description" content="Veroniek Dutré is goudsmid, juweelontwerper en grafisch kunstenaar. Sieraden uit edelmetaal met gevoel voor minimalisme en geometrie, te bezoeken in De MakersPost, Tienen." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:        #1f2a5c;
+      --ink-soft:   #2c3870;
+      --wine:       #7a1a3a;
+      --wine-soft:  #9a2a4f;
+      --gold:       #b8893a;
+      --paper:      #f7f1e6;
+      --paper-2:    #efe6d2;
+      --line:       #d9cdb4;
+      --muted:      #6c6452;
+      --shadow:     0 18px 50px -22px rgba(31,42,92,.25);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--wine); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px; color: var(--muted);
+    }
+    .topbar-inner {
+      max-width: 1180px; margin: 0 auto;
+      padding: 8px 24px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+
+    /* ---------- Header ---------- */
+    header.site {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(247,241,230,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1180px; margin: 0 auto;
+      padding: 16px 24px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 14px; }
+    .nav .brand img { height: 56px; width: auto; }
+    .nav ul {
+      list-style: none; padding: 0; margin: 0 0 0 auto;
+      display: flex; gap: 28px;
+    }
+    .nav a.navlink {
+      color: var(--ink); font-weight: 500; font-size: 15px;
+      letter-spacing: .02em;
+    }
+    .nav a.navlink:hover { color: var(--wine); text-decoration: none; }
+    .nav .cta {
+      background: var(--wine); color: #fff;
+      padding: 10px 18px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+    }
+    .nav .cta:hover { background: var(--wine-soft); text-decoration: none; }
+
+    /* ---------- Breadcrumb ---------- */
+    .breadcrumb {
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 24px;
+      font-size: 13px; color: var(--muted);
+    }
+    .breadcrumb-inner { max-width: 1180px; margin: 0 auto; }
+    .breadcrumb a { color: var(--muted); }
+    .breadcrumb a:hover { color: var(--wine); }
+    .breadcrumb .sep { margin: 0 8px; opacity: .5; }
+
+    /* ---------- Maker Hero ---------- */
+    .maker-hero {
+      position: relative;
+      background: linear-gradient(160deg, #0d1530 0%, #1f2a5c 60%, #2c3870 100%);
+      color: var(--paper);
+      padding: 80px 24px 88px;
+      overflow: hidden;
+    }
+    .maker-hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(184,137,58,.12) 0%, transparent 60%);
+    }
+    .maker-hero-inner {
+      position: relative;
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .maker-hero .eyebrow {
+      display: inline-block;
+      letter-spacing: .35em; text-transform: uppercase;
+      font-size: 11px; color: rgba(247,241,230,.6); font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .maker-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 600;
+      line-height: 1.02;
+      margin: 0 0 14px;
+    }
+    .maker-hero .discipline {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(20px, 2.4vw, 26px);
+      color: rgba(247,241,230,.75);
+      margin: 0 0 28px;
+    }
+    .maker-hero .tags {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .maker-hero .tag {
+      border: 1px solid rgba(247,241,230,.3);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(247,241,230,.85);
+    }
+    .maker-hero .visual {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .maker-hero .icon-wrap {
+      width: 240px; height: 240px;
+      border: 1px solid rgba(184,137,58,.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .maker-hero .icon-wrap::before {
+      content: "";
+      position: absolute; inset: 20px;
+      border: 1px solid rgba(184,137,58,.15);
+      border-radius: 50%;
+    }
+    .maker-hero .icon-wrap svg { width: 110px; height: 110px; }
+
+    /* ---------- Ornament ---------- */
+    .ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin: 18px 0 0;
+      color: var(--gold);
+    }
+    .ornament .line { width: 60px; height: 1px; background: var(--gold); }
+    .ornament .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 88px 24px; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .section-head { margin-bottom: 52px; }
+    .section-head .kicker {
+      display: inline-block;
+      letter-spacing: .3em; text-transform: uppercase;
+      font-size: 12px; color: var(--wine); font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 4vw, 50px);
+      color: var(--ink);
+      margin: 0 0 14px; line-height: 1.05;
+    }
+    .section-head p {
+      max-width: 640px;
+      color: #3a3a3a; font-size: 17px;
+    }
+
+    /* ---------- Verhaal ---------- */
+    .verhaal { background: var(--paper-2); }
+    .verhaal-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .verhaal-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 50px);
+      font-weight: 500; color: var(--ink);
+      margin: 0 0 6px; line-height: 1.05;
+    }
+    .verhaal-text .sub {
+      font-family: 'Caveat', cursive;
+      font-size: 21px; color: var(--wine);
+      margin: 0 0 26px;
+    }
+    .verhaal-text p {
+      color: #333; font-size: 16.5px; line-height: 1.75;
+      margin: 0 0 18px;
+    }
+    .verhaal-text p strong {
+      color: var(--ink); font-weight: 600;
+    }
+    .verhaal-text p:last-child { margin: 0; }
+
+    /* visual panel — abstracte geometrie */
+    .verhaal-visual {
+      background: linear-gradient(160deg, #131a3d 0%, #1f2a5c 100%);
+      border-radius: 16px;
+      aspect-ratio: 3/4;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 28px; color: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+    .verhaal-visual svg { width: 110px; height: 110px; }
+    .verhaal-visual .quote-small {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 21px;
+      text-align: center; line-height: 1.45;
+      color: rgba(247,241,230,.88);
+    }
+    .verhaal-visual .attr {
+      font-family: 'Caveat', cursive;
+      color: var(--gold); font-size: 18px;
+    }
+
+    /* ---------- Disciplines ---------- */
+    .disc-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .disc-card {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 32px 28px;
+    }
+    .disc-card .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; color: var(--gold);
+      font-size: 18px; margin-bottom: 14px;
+    }
+    .disc-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 600; color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .disc-card p { margin: 0; color: #333; font-size: 15.5px; line-height: 1.65; }
+
+    /* ---------- Technieken ---------- */
+    .technieken { background: var(--paper-2); }
+    .tech-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .tech-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px 26px;
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .tech-item .ico {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; color: var(--gold);
+      line-height: 1; flex: 0 0 auto;
+    }
+    .tech-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px; font-weight: 600; color: var(--ink);
+      margin: 0 0 7px;
+    }
+    .tech-item p { margin: 0; color: #333; font-size: 14.5px; }
+
+    /* ---------- Quote ---------- */
+    .quote-strip {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .quote-strip blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-style: italic;
+      line-height: 1.3;
+      max-width: 800px; margin: 0 auto;
+    }
+    .quote-strip .by {
+      display: block; margin-top: 20px;
+      font-style: normal;
+      font-family: 'Caveat', cursive;
+      color: rgba(247,241,230,.7); font-size: 20px;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-band {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 72px 24px;
+    }
+    .contact-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .contact-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 50px);
+      font-weight: 500; margin: 0 0 10px;
+    }
+    .contact-inner .sub {
+      font-family: 'Caveat', cursive;
+      font-size: 21px; color: rgba(247,241,230,.7);
+      margin: 0 0 28px;
+    }
+    .contact-inner p {
+      color: rgba(247,241,230,.8); font-size: 16px; line-height: 1.7;
+    }
+    .contact-links {
+      display: grid; gap: 16px;
+    }
+    .contact-link {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(247,241,230,.15);
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px;
+      color: var(--paper); text-decoration: none;
+      transition: background .2s ease;
+    }
+    .contact-link:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+    .contact-link .lbl {
+      font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+      color: rgba(247,241,230,.5); margin-bottom: 4px;
+    }
+    .contact-link .val {
+      font-size: 15.5px; color: rgba(247,241,230,.92);
+    }
+    .contact-link .ico-ext {
+      margin-left: auto;
+      font-size: 18px; color: rgba(247,241,230,.3);
+    }
+
+    /* ---------- Bezoek bar ---------- */
+    .bezoek-bar {
+      background: var(--wine);
+      color: var(--paper);
+      padding: 52px 24px;
+      text-align: center;
+    }
+    .bezoek-bar h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 500; margin: 0 0 10px;
+    }
+    .bezoek-bar p { font-size: 17px; color: rgba(247,241,230,.85); margin: 0 0 26px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px; border-radius: 999px;
+      font-weight: 500; font-size: 15px;
+      transition: transform .15s ease, background .2s ease;
+    }
+    .btn-light { background: var(--paper); color: var(--wine); }
+    .btn-light:hover { background: #fff; text-decoration: none; transform: translateY(-1px); }
+    .btn-ghost-light { border: 1px solid rgba(247,241,230,.5); color: var(--paper); }
+    .btn-ghost-light:hover { background: rgba(247,241,230,.15); text-decoration: none; }
+
+    /* ---------- Footer ---------- */
+    footer.site {
+      background: var(--ink); color: var(--paper);
+      padding: 60px 24px 28px;
+    }
+    .foot {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .foot h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(247,241,230,.7); margin: 0 0 14px;
+    }
+    .foot a { color: rgba(247,241,230,.85); }
+    .foot a:hover { color: #fff; }
+    .foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 14.5px; }
+    .foot p.small { color: rgba(247,241,230,.7); font-size: 14px; line-height: 1.6; }
+    .foot .signoff {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(247,241,230,.15);
+      margin-top: 40px; padding-top: 22px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: rgba(247,241,230,.6);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .nav ul { display: none; }
+      .maker-hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      .maker-hero .visual { display: none; }
+      .verhaal-grid { grid-template-columns: 1fr; gap: 40px; }
+      .verhaal-visual { aspect-ratio: 16/9; }
+      .disc-grid { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      section { padding: 64px 20px; }
+      .foot { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- top info bar -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Vierde Lansierslaan 82, 3300 Tienen — naast het station</span>
+      <span>Open · do – zo · 10u – 18u</span>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="site">
+    <nav class="nav" aria-label="hoofdnavigatie">
+      <a class="brand" href="index.html">
+        <img src="logo-makerspost-def2.png" alt="De MakersPost — handen van hier" />
+      </a>
+      <ul>
+        <li><a class="navlink" href="index.html#concept">Concept</a></li>
+        <li><a class="navlink" href="index.html#ambachten">Ambachten</a></li>
+        <li><a class="navlink" href="index.html#bezoek">Bezoek</a></li>
+        <li><a class="navlink" href="index.html#contact">Contact</a></li>
+      </ul>
+      <a class="cta" href="index.html#bezoek">Plan je bezoek</a>
+    </nav>
+  </header>
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="index.html">De MakersPost</a>
+      <span class="sep">›</span>
+      <a href="index.html#ambachten">Ambachten</a>
+      <span class="sep">›</span>
+      <span>Veroniek Dutré</span>
+    </div>
+  </div>
+
+  <!-- maker hero -->
+  <div class="maker-hero">
+    <div class="maker-hero-inner">
+      <div>
+        <span class="eyebrow">Deelnemend ambacht · De MakersPost</span>
+        <h1>Veroniek<br/>Dutré</h1>
+        <p class="discipline">jewelry design — and more</p>
+        <div class="tags">
+          <span class="tag">Goudsmid</span>
+          <span class="tag">Juweelontwerper</span>
+          <span class="tag">Grafisch kunstenaar</span>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="36" cy="50" r="18" stroke="rgba(247,241,230,.6)" stroke-width="1.2"/>
+            <circle cx="56" cy="50" r="18" stroke="rgba(247,241,230,.6)" stroke-width="1.2"/>
+            <circle cx="72" cy="50" r="9" stroke="rgba(184,137,58,.6)" stroke-width="1.2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- verhaal -->
+  <section class="verhaal">
+    <div class="container">
+      <div class="verhaal-grid">
+        <div class="verhaal-text">
+          <div class="section-head" style="margin-bottom:0;">
+            <span class="kicker">Over de maker</span>
+          </div>
+          <h2>Sieraden uit<br/>edelmetaal</h2>
+          <p class="sub">met gevoel voor minimalisme en geometrie</p>
+          <p>
+            Veroniek haalt inspiratie uit haar scheikundige achtergrond, uit
+            architectuur, natuur of jeugdherinneringen en vertaalt deze steeds
+            naar de puurste vormen. Ze verkent graag oude goudsmidstechnieken
+            en past deze toe, trouw aan haar eigen stijl.
+          </p>
+          <p>
+            In haar grafisch werk gaat ze dikwijls op zoek naar een beeldtaal
+            die aansluit bij haar juwelen — of vice versa — om zo een link te
+            creëren tussen de verschillende disciplines die ze beoefent.
+            Ze houdt ook van het schilderen van juwelen in gouache: niet alleen
+            een manier van ontwerpen, maar ook een vergeten ambacht en kunstvorm.
+          </p>
+          <p>
+            <strong>Alle sieraden worden door Veroniek ontworpen en volledig
+            ambachtelijk gemaakt in haar atelier in Boutersem</strong> — zo heeft
+            elk stuk een uniek karakter. Je kan bij haar ook terecht voor
+            een juweel op maat.
+          </p>
+        </div>
+        <div class="verhaal-visual" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="36" cy="50" r="20" stroke="rgba(247,241,230,.55)" stroke-width="1.2"/>
+            <circle cx="58" cy="50" r="20" stroke="rgba(247,241,230,.55)" stroke-width="1.2"/>
+            <circle cx="74" cy="50" r="10" stroke="rgba(184,137,58,.6)" stroke-width="1.2"/>
+          </svg>
+          <p class="quote-small">
+            "Elk stuk vertaalt inspiratie naar zijn puurste vorm."
+          </p>
+          <span class="attr">Veroniek Dutré · jewelry design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- disciplines -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">De drie disciplines</span>
+        <h2>Goudsmid · Ontwerper · Kunstenaar</h2>
+        <p>
+          Veroniek beoefent drie nauw verwante disciplines die elkaar
+          voortdurend beïnvloeden en verrijken.
+        </p>
+        <div class="ornament" aria-hidden="true">
+          <span class="line"></span><span class="dot"></span><span class="line"></span>
+        </div>
+      </div>
+      <div class="disc-grid">
+        <div class="disc-card">
+          <div class="num">— I</div>
+          <h3>Goudsmid</h3>
+          <p>
+            De basis van alles: het vakmanschap van de goudsmid. Veroniek
+            werkt met edelmetalen en beheerst de klassieke technieken die
+            ze vervolgens trouw naar haar eigen stijl vertaalt.
+          </p>
+        </div>
+        <div class="disc-card">
+          <div class="num">— II</div>
+          <h3>Juweelontwerper</h3>
+          <p>
+            Van schets tot afgewerkt sieraad — het ontwerp is de kern.
+            Minimalisme, geometrie en abstracte stilering kenmerken haar
+            werk. Je kan ook bij haar terecht voor een juweel op maat.
+          </p>
+        </div>
+        <div class="disc-card">
+          <div class="num">— III</div>
+          <h3>Grafisch kunstenaar</h3>
+          <p>
+            Veroniek zoekt een beeldtaal die aansluit bij haar juwelen.
+            Het schilderen van juwelen in gouache is voor haar zowel
+            ontwerpmethode als kunstvorm op zich.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- quote -->
+  <div class="quote-strip">
+    <blockquote>
+      "Veroniek vertaalt scheikunde, architectuur en natuur naar de puurste vormen in edelmetaal."
+      <span class="by">— Veroniek Dutré · jewelry design and more</span>
+    </blockquote>
+  </div>
+
+  <!-- technieken -->
+  <section class="technieken">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Ambachtelijke technieken</span>
+        <h2>Oude goudsmidskunst, eigen stijl</h2>
+        <p>
+          Veroniek verkent graag historische technieken en past ze toe,
+          trouw aan haar eigen minimalistische handschrift.
+        </p>
+        <div class="ornament" aria-hidden="true">
+          <span class="line"></span><span class="dot"></span><span class="line"></span>
+        </div>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Filigraan</h3>
+            <p>
+              Fijn draadwerk in zilver of goud dat gevlochten of gesoldeerd
+              wordt tot opengewerkte patronen van uitzonderlijke luchtigheid.
+            </p>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Granulé</h3>
+            <p>
+              Microscopisch kleine bolletjes metaal die op een oppervlak
+              worden bevestigd — een techniek die teruggaat tot de
+              Etruskische goudsmidskunst.
+            </p>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Ciseleren</h3>
+            <p>
+              Het bewerken van metaal met hamers en stempels om reliëf
+              en textuur te creëren — precisiewerk dat geduld en
+              vakmanschap vereist.
+            </p>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="ico">◆</div>
+          <div>
+            <h3>Handgraveren</h3>
+            <p>
+              Met graveernaald patronen, lijnen of tekst in het metaal
+              kerven — elk stuk krijgt zo een persoonlijk, onherhaalbaar
+              karakter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact & links -->
+  <div class="contact-band">
+    <div class="contact-inner">
+      <div>
+        <div style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(247,241,230,.5);margin-bottom:14px;">Contact</div>
+        <h2>Veroniek<br/>ontmoeten</h2>
+        <p class="sub">atelier in Boutersem · aanwezig in Tienen</p>
+        <p>
+          Bezoek Veroniek tijdens de openingsuren van De MakersPost in Tienen.
+          Of neem online contact op voor vragen over haar werk,
+          een juweel op maat, of een bezoek aan haar atelier in Boutersem.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="http://www.veronika-art.blogspot.com" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Website</div>
+            <div class="val">veronika-art.blogspot.com</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="mailto:veronika_dutre@yahoo.com">
+          <div>
+            <div class="lbl">E-mail</div>
+            <div class="val">veronika_dutre@yahoo.com</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="https://www.instagram.com/veroniekdutre" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Instagram</div>
+            <div class="val">@veroniekdutre</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+        <a class="contact-link" href="https://www.facebook.com/veroniek.dutre.juweelontwerp" target="_blank" rel="noopener">
+          <div>
+            <div class="lbl">Facebook</div>
+            <div class="val">veroniek.dutre.juweelontwerp</div>
+          </div>
+          <span class="ico-ext">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- bezoek bar -->
+  <div class="bezoek-bar">
+    <h2>Veroniek in De MakersPost, Tienen</h2>
+    <p>
+      Ontmoet haar tijdens onze openingsuren —
+      van donderdag tot en met zondag, 10u tot 18u.
+    </p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-light" href="index.html#bezoek">Plan je bezoek</a>
+      <a class="btn btn-ghost-light" href="index.html#ambachten">Andere makers</a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="site" id="contact">
+    <div class="foot">
+      <div>
+        <h4>De MakersPost</h4>
+        <p class="small">
+          Een huis voor makers in Tienen — een plek waar ambachten,
+          materialen en mensen samenkomen.
+        </p>
+        <p class="small" style="font-family:'Caveat',cursive; font-size:22px; color:rgba(247,241,230,.85);">
+          handen van hier
+        </p>
+      </div>
+      <div>
+        <h4>Bezoek</h4>
+        <ul>
+          <li>Vierde Lansierslaan 82</li>
+          <li>3300 Tienen</li>
+          <li>do – zo · 10u – 18u</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ambachten</h4>
+        <ul>
+          <li><a href="amelialederwaren.html">Amelia Lederwaren</a></li>
+          <li><a href="veroniekdutre.html">Veroniek Dutré</a></li>
+          <li><a href="studioa.html">Studio A</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hallo@demakerspost.be">hallo@demakerspost.be</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="signoff">
+        <span>© 2026 De MakersPost · Tienen</span>
+        <span><a href="index.html" style="color:inherit;">← Terug naar de homepage</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
